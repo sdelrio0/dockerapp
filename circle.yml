@@ -3,9 +3,13 @@ jobs:
   build:
     working_directory: ~/dockerapp
     docker:
-      - image: docker/compose:1.16.1
+      - image: circleci/python
     steps:
       - checkout
+      - run:
+          command: |
+            curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0 && \
+            sudo pip install docker-compose
       - run:
           command: |
             docker-compose up -d && \
