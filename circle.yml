@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/dockerapp
     docker:
-      - image: docker/compose
+      - image: docker/compose:1.16.1
     steps:
       - checkout
       - run:
