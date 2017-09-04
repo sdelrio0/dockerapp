@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/dockerapp
     docker:
-      - image: docker
+      - image: docker/compose
     steps:
       - checkout
       - run:
